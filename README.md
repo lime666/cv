@@ -1,2 +1,2 @@
 # README
-![cv](/assets/images/1.png)
+![cv](app/assets/images/1.png)
