@@ -1,5 +1,5 @@
 class ResumesController < ApplicationController
-  before_action :set_resume, only: %i[ show edit update destroy ]
+  before_action :set_resume, only: %i[show edit update destroy]
 
   # GET /resumes or /resumes.json
   def index
@@ -7,8 +7,7 @@ class ResumesController < ApplicationController
   end
 
   # GET /resumes/1 or /resumes/1.json
-  def show
-  end
+  def show; end
 
   # GET /resumes/new
   def new
@@ -16,8 +15,7 @@ class ResumesController < ApplicationController
   end
 
   # GET /resumes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /resumes or /resumes.json
   def create
@@ -25,7 +23,7 @@ class ResumesController < ApplicationController
     params.require(:resume).permit(:about)
     respond_to do |format|
       if @resume.save
-        format.html { redirect_to resume_url(@resume), notice: "Resume was successfully created." }
+        format.html { redirect_to resume_url(@resume), notice: 'Resume was successfully created.' }
         format.json { render :show, status: :created, location: @resume }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class ResumesController < ApplicationController
   def update
     respond_to do |format|
       if @resume.update(resume_params)
-        format.html { redirect_to resume_url(@resume), notice: "Resume was successfully updated." }
+        format.html { redirect_to resume_url(@resume), notice: 'Resume was successfully updated.' }
         format.json { render :show, status: :ok, location: @resume }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +50,7 @@ class ResumesController < ApplicationController
     @resume.destroy
 
     respond_to do |format|
-      format.html { redirect_to resumes_url, notice: "Resume was successfully destroyed." }
+      format.html { redirect_to resumes_url, notice: 'Resume was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -62,13 +60,14 @@ class ResumesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_resume
-      @resume = Resume.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def resume_params
-      params.require(:resume).permit(:name, :surname, :age, :email, :picture, :about)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_resume
+    @resume = Resume.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def resume_params
+    params.require(:resume).permit(:name, :surname, :age, :email, :picture, :about)
+  end
 end
