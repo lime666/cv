@@ -22,7 +22,7 @@ class ResumesController < ApplicationController
   # POST /resumes or /resumes.json
   def create
     @resume = Resume.new(resume_params)
-
+    params.require(:resume).permit(:about)
     respond_to do |format|
       if @resume.save
         format.html { redirect_to resume_url(@resume), notice: "Resume was successfully created." }
