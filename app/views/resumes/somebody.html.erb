@@ -1,23 +1,26 @@
 <img src="<%= @somebody.picture %>" alt="photo" style="float:right">
 
-<h1 class="display-3">CV</h1>
+<h1 class="display-4">Position: Cat</h1>
 <br>
 
 <dl class="row">
-  <dt class="col-sm-3"><strong>Name: </strong><%= @somebody.name %></dt>
+  <p><dt class="col-sm-3">Name: <em><%= @somebody.name %></em></dt></p>
   <br>
 
-  <dt class="col-sm-3"><strong>Surname: </strong><%= @somebody.surname %></dt>
+  <p><dt class="col-sm-3">Surname: <em><%= @somebody.surname %></em></dt></p>
   <br>
 
-  <dt class="col-sm-3"><strong>Age: </strong><%= @somebody.age %></dt>
+  <p><dt class="col-sm-3">Age: <em><%= @somebody.age %></em></dt></p>
   <br>
 
-  <dt class="col-sm-3"><strong>Email: </strong><%= @somebody.email %></dt>
+  <p><dt class="col-sm-3">Email: <em><%= @somebody.email %></em></dt></p>
   <br>
 
-  <strong><dt class="col-sm-3">About info:</dt></strong>
-  <dd class="col-sm-9"><%= @somebody.about %></dd>
+</dl>
+
+<dl class="row">
+  <p><dt class="col-xl-" style="margin-left:12px;">About info: </dt></p>
+  <dd style="margin-left:12px;"><%= @somebody.about %></dd>
 
 </dl>
 
