@@ -33,9 +33,9 @@
 
   <div class="field">
     <%= form.label :picture %>
-    <%= form.text_field :picture %>
   </div>
-
+  <img src="<%= @somebody.picture %>" alt="photo" class="img-thumbnail">
+  
   <div class="field">
     <%= form.label :about %>
     <%= form.rich_text_area :about %>
