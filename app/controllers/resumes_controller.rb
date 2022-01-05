@@ -56,7 +56,7 @@ class ResumesController < ApplicationController
   end
 
   def somebody
-    @somebody = Resume.find(1)
+    @somebody = Resume.find(2)
   end
 
   private
